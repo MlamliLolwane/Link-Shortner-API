@@ -30,3 +30,17 @@ C:\DotNet\LinkShortnerAPI\obj\Debug\net9.0\refint\LinkShortnerAPI.dll
 C:\DotNet\LinkShortnerAPI\obj\Debug\net9.0\LinkShortnerAPI.pdb
 C:\DotNet\LinkShortnerAPI\obj\Debug\net9.0\LinkShortnerAPI.genruntimeconfig.cache
 C:\DotNet\LinkShortnerAPI\obj\Debug\net9.0\ref\LinkShortnerAPI.dll
+C:\DotNet\LinkShortnerAPI\bin\Debug\net9.0\Namotion.Reflection.dll
+C:\DotNet\LinkShortnerAPI\bin\Debug\net9.0\Newtonsoft.Json.dll
+C:\DotNet\LinkShortnerAPI\bin\Debug\net9.0\NJsonSchema.dll
+C:\DotNet\LinkShortnerAPI\bin\Debug\net9.0\NJsonSchema.Annotations.dll
+C:\DotNet\LinkShortnerAPI\bin\Debug\net9.0\NJsonSchema.NewtonsoftJson.dll
+C:\DotNet\LinkShortnerAPI\bin\Debug\net9.0\NJsonSchema.Yaml.dll
+C:\DotNet\LinkShortnerAPI\bin\Debug\net9.0\NSwag.Annotations.dll
+C:\DotNet\LinkShortnerAPI\bin\Debug\net9.0\NSwag.AspNetCore.dll
+C:\DotNet\LinkShortnerAPI\bin\Debug\net9.0\NSwag.Core.dll
+C:\DotNet\LinkShortnerAPI\bin\Debug\net9.0\NSwag.Core.Yaml.dll
+C:\DotNet\LinkShortnerAPI\bin\Debug\net9.0\NSwag.Generation.dll
+C:\DotNet\LinkShortnerAPI\bin\Debug\net9.0\NSwag.Generation.AspNetCore.dll
+C:\DotNet\LinkShortnerAPI\bin\Debug\net9.0\YamlDotNet.dll
+C:\DotNet\LinkShortnerAPI\obj\Debug\net9.0\LinkShortnerAPI.sourcelink.json
