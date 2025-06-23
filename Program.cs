@@ -12,6 +12,24 @@ builder.Services.AddDbContext<LinkShortnerContext>(options =>
         new MySqlServerVersion(new Version(8, 0, 34))
     ));
 
+var frontEndUrl = "";
+if(app.Environment.IsDevelopment())
+{
+    frontEndUrl = "http://localhost:5173";
+}
+else{
+    frontEndUrl = "https://frontend-url.com";
+}
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSPAOnly", policy =>
+    {
+    policy.WithOrigins(frontEndUrl)
+          .AllowAnyHeader()
+          .AllowAnyMethod();
+    });
+});
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -19,6 +37,8 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
+
+app.UseCors("AllowSPAOnly");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -29,6 +49,7 @@ if (app.Environment.IsDevelopment())
         options.DocumentPath = "/openapi/v1.json";
     });
 }
+
 
 app.UseHttpsRedirection();
 
