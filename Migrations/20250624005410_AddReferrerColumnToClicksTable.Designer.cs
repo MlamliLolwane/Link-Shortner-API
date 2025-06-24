@@ -3,6 +3,7 @@ using System;
 using LinkShortnerAPI.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LinkShortnerAPI.Migrations
 {
     [DbContext(typeof(LinkShortnerContext))]
-    partial class LinkShortnerContextModelSnapshot : ModelSnapshot
+    [Migration("20250624005410_AddReferrerColumnToClicksTable")]
+    partial class AddReferrerColumnToClicksTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -31,7 +34,15 @@ namespace LinkShortnerAPI.Migrations
                     b.Property<int>("LinkId")
                         .HasColumnType("int");
 
+                    b.Property<string>("OriginalUrl")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.Property<string>("Referrer")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("ShortenedUrl")
                         .IsRequired()
                         .HasColumnType("longtext");
 
@@ -51,11 +62,7 @@ namespace LinkShortnerAPI.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<string>("OriginalUrl")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("ShortenedUrl")
+                    b.Property<string>("Referrer")
                         .IsRequired()
                         .HasColumnType("longtext");
 
