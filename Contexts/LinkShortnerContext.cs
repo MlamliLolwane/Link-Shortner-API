@@ -9,6 +9,9 @@ public class LinkShortnerContext : DbContext
 
     public DbSet<Link> Links { get; set; }
     public DbSet<Click> Clicks { get; set; }
+
+    public DbSet<User> User { get; set; }
+
     
 }
 

@@ -1,11 +1,8 @@
 namespace LinkShortnerAPI.Models;
 
-public class Link
+public class AnonymousLink
 {
     public int Id { get; set; }
     public required string Referrer { get; set; }
     public DateTime CreatedAt { get; set; }
-    public int UserId { get; set; }
-    public User User { get; set; } = null!;
-    public ICollection<Click> Click { get; } = [];
 }
