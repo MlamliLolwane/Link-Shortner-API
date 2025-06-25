@@ -52,7 +52,7 @@ public class ClickController(LinkShortnerContext context) : ControllerBase
         {
             if (Uri.TryCreate(refererHeader.ToString(), UriKind.Absolute, out var uri))
             {
-                click.Referrer = uri.Host;
+                click.Referrer = $"{uri.Scheme}://{uri.Host}";
             }
         }
 
