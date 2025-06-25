@@ -11,7 +11,7 @@ public class LinkController(LinkShortnerContext context) : ControllerBase
 {
     private readonly LinkShortnerContext _context = context;
 
-    [HttpPost]
+    [HttpPost()]
     public async Task<ActionResult<Link>> CreateLink(Link link)
     {
         var shortCode = Convert.ToBase64String(Guid.NewGuid().ToByteArray())
@@ -27,6 +27,23 @@ public class LinkController(LinkShortnerContext context) : ControllerBase
 
         return StatusCode(StatusCodes.Status201Created);
     }
+
+    [HttpDelete("{linkId}")]
+    public async Task<IActionResult> DeleteLink(int linkId)
+    {
+        var link = await _context.Links.FindAsync(linkId);
+
+        if (link == null)
+        {
+            return NotFound();
+        }
+
+        _context.Links.Remove(link);
+        await _context.SaveChangesAsync();
+
+        return NoContent();
+    }
+
 
     [HttpGet("link-details/user/{userId}")] //authenticated/links
     public async Task<IActionResult> GetAllUserLinksWithClickCounts(int userId)
