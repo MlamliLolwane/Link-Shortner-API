@@ -17,7 +17,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSPAOnly", policy =>
     {
-    policy.WithOrigins("http://localhost:5173")
+    policy.WithOrigins("https://link-shortner.mlamlis-projects.vercel.app/")
           .AllowAnyHeader()
           .AllowAnyMethod();
     });
