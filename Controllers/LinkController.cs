@@ -25,7 +25,7 @@ public class LinkController(LinkShortnerContext context) : ControllerBase
         _context.Links.Add(link);
         await _context.SaveChangesAsync();
 
-        return StatusCode(StatusCodes.Status201Created);
+        return Created(string.Empty, link);
     }
 
     [HttpDelete("{linkId}")]

@@ -60,6 +60,6 @@ public class ClickController(LinkShortnerContext context) : ControllerBase
         await _context.SaveChangesAsync();
 
         // Redirect to the original URL
-        return RedirectPermanent(link.OriginalUrl);
+        return Redirect(link.OriginalUrl);
     }
 }
