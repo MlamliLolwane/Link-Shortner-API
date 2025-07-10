@@ -19,7 +19,7 @@ public class LinkController(LinkShortnerContext context) : ControllerBase
         .Replace("+", "-")
         .Substring(0, 8);
 
-        link.ShortenedUrl = $"http://localhost:5080/{shortCode}";
+        link.ShortenedUrl = $"http://lynkly.bigodeals.net/{shortCode}";
         link.CreatedAt = DateTime.UtcNow;
 
         _context.Links.Add(link);
