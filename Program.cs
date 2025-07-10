@@ -17,7 +17,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSPAOnly", policy =>
     {
-    policy.WithOrigins("https://link-shortner.mlamlis-projects.vercel.app/")
+    policy.WithOrigins("https://link-shortner.mlamlis-projects.vercel.app")
           .AllowAnyHeader()
           .AllowAnyMethod();
     });
@@ -32,9 +32,6 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-
-app.UseCors("AllowSPAOnly");
-
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -48,6 +45,7 @@ if (app.Environment.IsDevelopment())
 
 
 app.UseHttpsRedirection();
+app.UseCors("AllowSPAOnly");
 
 app.UseAuthorization();
 
